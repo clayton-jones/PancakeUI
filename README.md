@@ -1,5 +1,10 @@
 Pancake UI Development
 
+## Authors:
+* [Clayton Jones](https://www.github.com/clayton-jones)
+
+* [Joel Watson](https://www.github.com/JoelMWatson)
+
 ## Available Scripts
 
 In the project directory, you can run:
