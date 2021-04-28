@@ -4,8 +4,11 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+      "es2020"
     ],
+    "declaration": true,
+    // "emitDeclarationOnly": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +21,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "outDir": "./dist",
+    "types": ["node", "react"],
   },
   "include": [
-    "src"
-  ]
+    "src/components",
+    "src/style/main.scss"
+  ],
+  "exclude": ["node_modules"],
+  
 }

@@ -1,5 +1,6 @@
 .storybook
 stories
+*.stories.tsx
 node_modules
 App.css
 App.tsx
