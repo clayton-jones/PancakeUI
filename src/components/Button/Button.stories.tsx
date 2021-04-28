@@ -7,7 +7,7 @@ export default {
   title: 'Example/Button',
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    
   },
 } as Meta;
 
@@ -35,3 +35,25 @@ Small.args = {
   size: 'small',
   label: 'Button',
 };
+
+export const onClick = Template.bind({});
+onClick.args = {
+  onClick: () => {
+    alert('Clicked');
+  },
+  label: 'Click me',
+  primary: true,
+}
+
+export const Square = Template.bind({});
+Square.args = {
+  label: 'Square',
+  rounded: false,
+}
+
+export const Color = Template.bind({});
+Color.args = {
+  backgroundColor: 'Green',
+  label: 'Color',
+  primary: true,
+}
