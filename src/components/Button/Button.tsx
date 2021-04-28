@@ -6,18 +6,38 @@ export interface ButtonProps {
    * Is this the principal call to action on the page?
    */
   primary?: boolean;
+
   /**
-   * What background color to use
+   * primary color to use in color gradient
+   */
+  colorPrimary?: string;
+  
+  /**
+   * secondary color to use in color gradient
+   */
+  colorSecondary?: string;
+
+  /**
+   * background color
    */
   backgroundColor?: string;
+
+
   /**
    * How large should the button be?
    */
   size?: 'small' | 'medium' | 'large';
+
   /**
    * Button contents
    */
   label: string;
+
+  /**
+   * Does the button have rounded corners?
+   */
+  rounded?: boolean;
+
   /**
    * Optional click handler
    */
@@ -30,16 +50,23 @@ export interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({
   primary = false,
   size = 'medium',
-  backgroundColor,
   label,
+  backgroundColor,
+  colorPrimary = '#085f70',
+  colorSecondary = '#003cb5',
+  rounded = true,
+  onClick = () => null,
   ...props
 }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = primary ? 'primary' : 'secondary';
+  const round = !rounded ? 'square' : '';
+  const backgroundImage = `linear-gradient(45deg, ${colorPrimary} 0%, ${colorSecondary} 100%)`
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
+      className={['pancake-btn', `${size}`, mode, round].join(' ')}
+      style={{ backgroundColor, backgroundImage }}
+      onClick={onClick}
       {...props}
     >
       {label}
