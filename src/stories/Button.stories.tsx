@@ -15,14 +15,20 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
   label: 'Button',
+  mode: 'primary',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Button',
+  mode: 'secondary',
 };
+
+export const Default = Template.bind({});
+Default.args = {
+  label: 'Default'
+}
 
 export const Large = Template.bind({});
 Large.args = {
@@ -42,7 +48,7 @@ onClick.args = {
     alert('Clicked');
   },
   label: 'Click me',
-  primary: true,
+  mode: 'primary'
 }
 
 export const Square = Template.bind({});
@@ -51,9 +57,14 @@ Square.args = {
   rounded: false,
 }
 
-export const Color = Template.bind({});
-Color.args = {
-  backgroundColor: 'Green',
-  label: 'Color',
-  primary: true,
+export const Affirmative = Template.bind({});
+Affirmative.args = {
+  label: 'Affirmative',
+  mode: 'affirmative',
+}
+
+export const Error = Template.bind({});
+Error.args = {
+  label: 'Error',
+  mode: 'error',
 }

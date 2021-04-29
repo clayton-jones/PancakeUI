@@ -3,25 +3,17 @@ import '../style/Button/button.scss';
 
 export interface ButtonProps {
   /**
-   * Is this the principal call to action on the page?
+   * Type of button:
+   *  -'primary'
+   *  -'secondary'
+   *  -'affirmative'
+   *  -'error'
    */
-  primary?: boolean;
-
+  mode?: string;
   /**
-   * primary color to use in color gradient
+   * Secondary button color
    */
-  colorPrimary?: string;
-  
-  /**
-   * secondary color to use in color gradient
-   */
-  colorSecondary?: string;
-
-  /**
-   * background color
-   */
-  backgroundColor?: string;
-
+  secondary?: boolean;
 
   /**
    * How large should the button be?
@@ -38,8 +30,6 @@ export interface ButtonProps {
    */
   rounded?: boolean;
 
-  gradient?: boolean;
-
   /**
    * Optional click handler
    */
@@ -50,26 +40,20 @@ export interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button: React.FC<ButtonProps> = ({
-  primary = false,
+  mode = '',
   size = 'medium',
   label = '',
-  backgroundColor = 'blue',
-  gradient = false,
-  colorPrimary = '#085f70',
-  colorSecondary = '#003cb5',
   rounded = true,
   onClick = () => null,
   ...props
 }) => {
-  const mode = primary ? 'primary' : 'secondary';
+  
   const round = !rounded ? 'square' : '';
-  const backgroundImage = gradient ? `linear-gradient(45deg, ${colorPrimary} 0%, ${colorSecondary} 100%)` : '';
   
   return (
     <button
       type="button"
       className={['pancake-btn', `${size}`, mode, round].join(' ')}
-      style={{ backgroundColor, backgroundImage }}
       onClick={onClick}
       {...props}
     >
