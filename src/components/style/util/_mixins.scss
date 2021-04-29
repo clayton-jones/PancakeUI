@@ -40,3 +40,13 @@ ORDER: Base + Typography > Generar Layout + Grid > Page Layout > Components
       } //1800px +
     }
   }
+
+@mixin colors($color1, $color2) {
+  color: $color1;
+  background-color: $color2;
+
+  &:hover {
+    color: $color2;
+    background-color: $color1;
+  }
+}

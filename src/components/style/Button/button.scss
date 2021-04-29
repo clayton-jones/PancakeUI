@@ -1,29 +1,43 @@
 @import '../main.scss';
 
 .pancake-btn {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $font;
+  // color: $default-text-color;
+  // background-color: $default-background-color;
   font-weight: 700;
   border: 0;
   border-radius: 3em;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
+  box-shadow: 0px 2px 2px rgb(87, 87, 87);
+
+  @include colors($default-text-color, $default-background-color);
+
+  &:active {
+    transform: translate(0px, 2px);
+    box-shadow: 0px 1px 2px rgb(95, 95, 95);
+  }
 
   &.square {
     border-radius: 0;
   }
 
   &.primary {
-    color: $white-color;
-    background-color: inherit;
+    @include colors($primary-text-color,$primary-background-color);
   }
 
   &.secondary {
-    color: $white-color;
-    background-color: transparent;
-    background-image: none;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+    @include colors($secondary-text-color,$secondary-background-color);
   }
+  &.affirmative {
+    @include colors($white-color,$affirmative-color);
+  }
+  &.error {
+    @include colors($white-color,$error-color);
+  }
+
+
 
   &.small {
     font-size: 12px;
