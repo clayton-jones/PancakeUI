@@ -1,34 +1,65 @@
+// {
+//   "compilerOptions": {
+//     "target": "es5",
+//     "lib": [
+//       "dom",
+//       "dom.iterable",
+//       "esnext",
+//       "es2020"
+//     ],
+//     "declaration": true,
+//     // "emitDeclarationOnly": true,
+//     "allowJs": true,
+//     "skipLibCheck": true,
+//     "esModuleInterop": true,
+//     "allowSyntheticDefaultImports": true,
+//     "strict": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "noFallthroughCasesInSwitch": true,
+//     "module": "esnext",
+//     "moduleResolution": "node",
+//     "resolveJsonModule": true,
+//     "isolatedModules": true,
+//     "sourceMap": true,
+//     "noEmit": true,
+//     "jsx": "react",
+//     "outDir": "./dist",
+//     "types": ["node", "react", "jest"],
+//     "typeRoots": [
+//       "index.d.ts",
+//       "node_modules/@types"
+//     ]
+//   },
+//   "include": [
+//     "src/**/*tsx",
+
+//   ],
+//   "exclude": ["node_modules", "src/*.test.tsx"],
+  
+// }
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "es2020"
-    ],
-    "declaration": true,
-    // "emitDeclarationOnly": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve",
     "outDir": "./dist",
-    "types": ["node", "react"],
+    "target": "es5",
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "removeComments": true,
+    "declaration": true,
+    "sourceMap": false,
+    "jsx": "react",
+    "typeRoots": [
+      "index.d.ts",
+      "node_modules/@types",
+      "jest"
+    ]
   },
   "include": [
-    "src/components",
-    "src/style/main.scss"
+    "./src/components/**/*.tsx",
+    "./src/components/**/*.scss"
   ],
-  "exclude": ["node_modules"],
-  
+  "exclude": [
+    "node_modules"
+  ]
 }

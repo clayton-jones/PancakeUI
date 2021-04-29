@@ -1,5 +1,5 @@
 import React from 'react';
-import './button.scss';
+import '../style/Button/button.scss';
 
 export interface ButtonProps {
   /**
@@ -38,6 +38,8 @@ export interface ButtonProps {
    */
   rounded?: boolean;
 
+  gradient?: boolean;
+
   /**
    * Optional click handler
    */
@@ -50,8 +52,9 @@ export interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({
   primary = false,
   size = 'medium',
-  label,
-  backgroundColor,
+  label = '',
+  backgroundColor = 'blue',
+  gradient = false,
   colorPrimary = '#085f70',
   colorSecondary = '#003cb5',
   rounded = true,
@@ -60,7 +63,8 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const mode = primary ? 'primary' : 'secondary';
   const round = !rounded ? 'square' : '';
-  const backgroundImage = `linear-gradient(45deg, ${colorPrimary} 0%, ${colorSecondary} 100%)`
+  const backgroundImage = gradient ? `linear-gradient(45deg, ${colorPrimary} 0%, ${colorSecondary} 100%)` : '';
+  
   return (
     <button
       type="button"
