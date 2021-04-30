@@ -1,0 +1,55 @@
+@import '../main.scss';
+
+.pancake-text-wrapper {
+    --padding: 5px;
+    position: relative;
+    width: max-content;
+    font-family: $font;
+    
+    // overflow: hidden;
+
+    &:focus-within {
+        .pancake-label {
+            transform: translateY(calc(100% * -1.5 + var(--padding)));
+        }
+
+        &::after {
+            transform: scaleX(1);
+        }
+    }
+
+    &::after {
+        content: ' ';
+        position: absolute;
+        height: 1px;
+        left: 0;
+        bottom: 0px;
+        width: 100%;
+        background: $black-color;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 300ms ease;
+    }
+
+    .pancake-label {
+        position: absolute;
+        transform: translateY(20%);
+        transition: transform 300ms ease;
+        bottom: calc(var(--padding) * 1.5);
+        left: var(--padding);
+
+        &.up {
+            transform: translateY(calc(100% * -1.5 + var(--padding)));
+        }
+    }
+
+    .pancake-text {
+        // border-width: 0px 0px 1px 0px;
+        border: none;
+        outline: none;
+        padding: var(--padding);
+        background: $white-color;
+        color: $black-color;
+        border-radius: 2px;
+    }
+}
