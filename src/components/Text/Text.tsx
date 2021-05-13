@@ -40,18 +40,19 @@ export const Text: React.FC<TextProps> = ({
             >
                 {label}
             </label>
-            <input
-                placeholder={placeholder}
-                className={['pancake-text'].join(' ')}
-                {...props}
-                onChange={(e: React.BaseSyntheticEvent): void => {
-                    onChange(e);
-                    textChange(e);
-                }}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                // value={value ? value : content}
-            />
+            <div className="input-wrapper">
+                <input
+                    placeholder={placeholder}
+                    className={['pancake-text'].join(' ')}
+                    {...props}
+                    onChange={(e: React.BaseSyntheticEvent): void => {
+                        onChange(e);
+                        textChange(e);
+                    }}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                />
+            </div>
         </div>
     )
 }
