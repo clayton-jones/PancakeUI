@@ -1,0 +1,79 @@
+@import '../main.scss';
+
+.pancake-text-wrapper {
+    --padding: 5px;
+    position: relative;
+    width: max-content;
+    font-family: $font;
+    font-size: 1rem;
+    margin: 8px;
+    display: inline-flex;
+
+    &:focus-within {
+        .pancake-label {
+            transform: translate(0, 1.5px);
+            color: $primary-background-color;
+        }
+
+        &::after {
+            transform: scaleX(1);
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    &::after {
+        background: $primary-background-color;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 300ms ease;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        background: $dark-grey;
+    }
+
+    .pancake-label {
+        position: absolute;
+        transform: translateY(20px);
+        transform-origin: top left;
+        transition: transform 300ms ease;
+        left: 0;
+        top: 0;
+        font: inherit;
+
+        &.up {
+            transform: translate(0, 1.5px);
+        }
+    }
+
+    .input-wrapper {
+        margin-top: 16px;
+        position: relative;
+    }
+
+    .pancake-text {
+        border: none;
+        outline: none;
+        padding: 6px 0 7px;
+        box-sizing: border-box;
+        background: transparent;
+        color: $black-color;
+        font: inherit;
+        width: 100%;
+        height: 1.5em;
+    }
+}
