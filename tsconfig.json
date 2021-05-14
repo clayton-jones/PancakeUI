@@ -3,18 +3,33 @@
     "outDir": "./dist",
     "target": "es5",
     "esModuleInterop": true,
-    "module": "commonjs",
+    "module": "esnext",
     "noImplicitAny": true,
     "strictNullChecks": true,
     "removeComments": true,
     "declaration": true,
     "sourceMap": false,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "typeRoots": [
       "index.d.ts",
       "node_modules/@types",
       "jest"
-    ]
+    ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
   "include": [
     "./src/components/**/*.tsx",
