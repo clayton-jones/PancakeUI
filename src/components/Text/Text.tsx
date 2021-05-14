@@ -37,6 +37,8 @@ export const Text: React.FC<TextProps> = ({
                      content ? 'up' : '',
                      placeholder && label ? 'up' : ''
                     ].join(' ')}
+                htmlFor='pancake-text'
+                data-testid='pancake-label-testid'
             >
                 {label}
             </label>
@@ -51,6 +53,7 @@ export const Text: React.FC<TextProps> = ({
                     }}
                     onFocus={onFocus}
                     onBlur={onBlur}
+                    id='pancake-text'
                 />
             </div>
         </div>
